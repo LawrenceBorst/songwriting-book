@@ -1,0 +1,1 @@
+{"version":3,"file":"constants.js","sourceRoot":"","sources":["../../../../server/chapter/constants.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,oBAAoB,GAAwB;IACvD,YAAY;IACZ,eAAe;CAChB,CAAC","sourcesContent":["import { ChapterFileHeader } from \"./types\";\n\nexport const CHAPTER_FILE_HEADERS: ChapterFileHeader[] = [\n  \"<--NAME-->\",\n  \"<--CONTENT-->\",\n];\n"]}

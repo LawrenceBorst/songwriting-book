@@ -1,4 +1,6 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
+import { getChapter } from '../utils/chapter';
+import { Chapter } from '../../../../server/chapter/types';
 
 /**
  * The main body of the book, containing the text
@@ -9,7 +11,29 @@ import { Component, h } from '@stencil/core';
   shadow: true,
 })
 export class SBBody {
+  @State()
+  private chapter: Chapter = undefined;
+
   public render() {
-    return <div>Hello, World!</div>;
+    if (this.chapter === undefined) {
+      return;
+    }
+
+    return (
+      <article class="chapter">
+        <header class="chapter-header">
+          <h1>{this.chapter.name}</h1>
+        </header>
+        <section class="chapter-content">
+          {this.chapter.content.map((line: string) => (
+            <p>{line}</p>
+          ))}
+        </section>
+      </article>
+    );
+  }
+
+  public async componentDidLoad() {
+    this.chapter = (await (await getChapter(1)).json()) as Chapter;
   }
 }
