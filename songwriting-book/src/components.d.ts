@@ -5,33 +5,207 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Icon } from "./components/icon/types";
+import { NavBarMode, NavButton } from "./components/sidebar/types";
+export { Icon } from "./components/icon/types";
+export { NavBarMode, NavButton } from "./components/sidebar/types";
 export namespace Components {
-    interface SongwritingBook {
+    /**
+     * Topmost component in the document
+     */
+    interface SbApplication {
+    }
+    /**
+     * The main body of the book, containing the text
+     */
+    interface SbBody {
+    }
+    /**
+     * A wrapper for material icons
+     */
+    interface SbIcon {
+        /**
+          * Icon to be rendered
+         */
+        "icon": Icon;
+    }
+    interface SbIconBar {
+        /**
+          * Buttons available in the icon bar
+         */
+        "buttons": NavButton[];
+    }
+    interface SbSidebar {
+    }
+    interface SbSidebarContent {
+        /**
+          * The current navigation mode to be displayed
+         */
+        "mode": NavBarMode;
+    }
+    interface SidebarContents {
+    }
+    interface SidebarSearch {
     }
 }
+export interface SbIconBarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSbIconBarElement;
+}
 declare global {
-    interface HTMLSongwritingBookElement extends Components.SongwritingBook, HTMLStencilElement {
+    /**
+     * Topmost component in the document
+     */
+    interface HTMLSbApplicationElement extends Components.SbApplication, HTMLStencilElement {
     }
-    var HTMLSongwritingBookElement: {
-        prototype: HTMLSongwritingBookElement;
-        new (): HTMLSongwritingBookElement;
+    var HTMLSbApplicationElement: {
+        prototype: HTMLSbApplicationElement;
+        new (): HTMLSbApplicationElement;
+    };
+    /**
+     * The main body of the book, containing the text
+     */
+    interface HTMLSbBodyElement extends Components.SbBody, HTMLStencilElement {
+    }
+    var HTMLSbBodyElement: {
+        prototype: HTMLSbBodyElement;
+        new (): HTMLSbBodyElement;
+    };
+    /**
+     * A wrapper for material icons
+     */
+    interface HTMLSbIconElement extends Components.SbIcon, HTMLStencilElement {
+    }
+    var HTMLSbIconElement: {
+        prototype: HTMLSbIconElement;
+        new (): HTMLSbIconElement;
+    };
+    interface HTMLSbIconBarElementEventMap {
+        "selection": NavButton | null;
+    }
+    interface HTMLSbIconBarElement extends Components.SbIconBar, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLSbIconBarElementEventMap>(type: K, listener: (this: HTMLSbIconBarElement, ev: SbIconBarCustomEvent<HTMLSbIconBarElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLSbIconBarElementEventMap>(type: K, listener: (this: HTMLSbIconBarElement, ev: SbIconBarCustomEvent<HTMLSbIconBarElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLSbIconBarElement: {
+        prototype: HTMLSbIconBarElement;
+        new (): HTMLSbIconBarElement;
+    };
+    interface HTMLSbSidebarElement extends Components.SbSidebar, HTMLStencilElement {
+    }
+    var HTMLSbSidebarElement: {
+        prototype: HTMLSbSidebarElement;
+        new (): HTMLSbSidebarElement;
+    };
+    interface HTMLSbSidebarContentElement extends Components.SbSidebarContent, HTMLStencilElement {
+    }
+    var HTMLSbSidebarContentElement: {
+        prototype: HTMLSbSidebarContentElement;
+        new (): HTMLSbSidebarContentElement;
+    };
+    interface HTMLSidebarContentsElement extends Components.SidebarContents, HTMLStencilElement {
+    }
+    var HTMLSidebarContentsElement: {
+        prototype: HTMLSidebarContentsElement;
+        new (): HTMLSidebarContentsElement;
+    };
+    interface HTMLSidebarSearchElement extends Components.SidebarSearch, HTMLStencilElement {
+    }
+    var HTMLSidebarSearchElement: {
+        prototype: HTMLSidebarSearchElement;
+        new (): HTMLSidebarSearchElement;
     };
     interface HTMLElementTagNameMap {
-        "songwriting-book": HTMLSongwritingBookElement;
+        "sb-application": HTMLSbApplicationElement;
+        "sb-body": HTMLSbBodyElement;
+        "sb-icon": HTMLSbIconElement;
+        "sb-icon-bar": HTMLSbIconBarElement;
+        "sb-sidebar": HTMLSbSidebarElement;
+        "sb-sidebar-content": HTMLSbSidebarContentElement;
+        "sidebar-contents": HTMLSidebarContentsElement;
+        "sidebar-search": HTMLSidebarSearchElement;
     }
 }
 declare namespace LocalJSX {
-    interface SongwritingBook {
+    /**
+     * Topmost component in the document
+     */
+    interface SbApplication {
+    }
+    /**
+     * The main body of the book, containing the text
+     */
+    interface SbBody {
+    }
+    /**
+     * A wrapper for material icons
+     */
+    interface SbIcon {
+        /**
+          * Icon to be rendered
+         */
+        "icon"?: Icon;
+    }
+    interface SbIconBar {
+        /**
+          * Buttons available in the icon bar
+         */
+        "buttons"?: NavButton[];
+        /**
+          * Emitted when a navigation button is clicked
+         */
+        "onSelection"?: (event: SbIconBarCustomEvent<NavButton | null>) => void;
+    }
+    interface SbSidebar {
+    }
+    interface SbSidebarContent {
+        /**
+          * The current navigation mode to be displayed
+         */
+        "mode"?: NavBarMode;
+    }
+    interface SidebarContents {
+    }
+    interface SidebarSearch {
     }
     interface IntrinsicElements {
-        "songwriting-book": SongwritingBook;
+        "sb-application": SbApplication;
+        "sb-body": SbBody;
+        "sb-icon": SbIcon;
+        "sb-icon-bar": SbIconBar;
+        "sb-sidebar": SbSidebar;
+        "sb-sidebar-content": SbSidebarContent;
+        "sidebar-contents": SidebarContents;
+        "sidebar-search": SidebarSearch;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "songwriting-book": LocalJSX.SongwritingBook & JSXBase.HTMLAttributes<HTMLSongwritingBookElement>;
+            /**
+             * Topmost component in the document
+             */
+            "sb-application": LocalJSX.SbApplication & JSXBase.HTMLAttributes<HTMLSbApplicationElement>;
+            /**
+             * The main body of the book, containing the text
+             */
+            "sb-body": LocalJSX.SbBody & JSXBase.HTMLAttributes<HTMLSbBodyElement>;
+            /**
+             * A wrapper for material icons
+             */
+            "sb-icon": LocalJSX.SbIcon & JSXBase.HTMLAttributes<HTMLSbIconElement>;
+            "sb-icon-bar": LocalJSX.SbIconBar & JSXBase.HTMLAttributes<HTMLSbIconBarElement>;
+            "sb-sidebar": LocalJSX.SbSidebar & JSXBase.HTMLAttributes<HTMLSbSidebarElement>;
+            "sb-sidebar-content": LocalJSX.SbSidebarContent & JSXBase.HTMLAttributes<HTMLSbSidebarContentElement>;
+            "sidebar-contents": LocalJSX.SidebarContents & JSXBase.HTMLAttributes<HTMLSidebarContentsElement>;
+            "sidebar-search": LocalJSX.SidebarSearch & JSXBase.HTMLAttributes<HTMLSidebarSearchElement>;
         }
     }
 }
