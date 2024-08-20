@@ -1,6 +1,7 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import { getChapter } from '../utils/chapter';
 import { Chapter } from '../../../../server/chapter/types';
+import { SBWebComponent } from '../sbwebcomponent';
 
 /**
  * The main body of the book, containing the text
@@ -10,7 +11,13 @@ import { Chapter } from '../../../../server/chapter/types';
   styleUrl: 'body.scss',
   shadow: true,
 })
-export class SBBody {
+export class SBBody implements SBWebComponent {
+  /**
+   * @inheritdoc
+   */
+  @Prop()
+  platform;
+  
   @State()
   private chapter: Chapter = undefined;
 

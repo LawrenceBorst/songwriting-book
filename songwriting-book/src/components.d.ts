@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Icon } from "./components/icon/types";
 import { NavBarMode, NavButton } from "./components/sidebar/types";
+import { Platform } from "./platform/types";
 export { Icon } from "./components/icon/types";
 export { NavBarMode, NavButton } from "./components/sidebar/types";
+export { Platform } from "./platform/types";
 export namespace Components {
     /**
      * Topmost component in the document
@@ -19,6 +21,11 @@ export namespace Components {
      * The main body of the book, containing the text
      */
     interface SbBody {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform": any;
     }
     /**
      * A wrapper for material icons
@@ -36,6 +43,11 @@ export namespace Components {
         "buttons": NavButton[];
     }
     interface SbSidebar {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform": Platform;
     }
     interface SbSidebarContent {
         /**
@@ -142,6 +154,11 @@ declare namespace LocalJSX {
      * The main body of the book, containing the text
      */
     interface SbBody {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform"?: any;
     }
     /**
      * A wrapper for material icons
@@ -163,6 +180,11 @@ declare namespace LocalJSX {
         "onSelection"?: (event: SbIconBarCustomEvent<NavButton | null>) => void;
     }
     interface SbSidebar {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform"?: Platform;
     }
     interface SbSidebarContent {
         /**

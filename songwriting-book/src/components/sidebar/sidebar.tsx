@@ -1,13 +1,21 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import { sidebarButtons } from './sidebar-buttons';
 import { NavBarMode, NavButton } from './types';
+import { Platform } from '../../platform/types';
+import { SBWebComponent } from '../sbwebcomponent'
 
 @Component({
   tag: 'sb-sidebar',
   styleUrl: 'sidebar.scss',
   shadow: true,
 })
-export class SBSideBar {
+export class SBSideBar implements SBWebComponent {
+  /**
+   * @inheritdoc
+   */
+  @Prop()
+  public platform: Platform;
+
   @State()
   private mode: NavBarMode | null = null;
 

@@ -24,7 +24,7 @@ graph TD;
   sb-sidebar --> sb-icon-bar
   sb-sidebar --> sb-sidebar-content
   sb-icon-bar --> sb-icon
-  sb-sidebar-content --> sb-sidebar-content
+  sb-sidebar-content --> sb-sidebar-contents
   sb-sidebar-content --> sb-sidebar-search
   style sb-application fill:#f9f,stroke:#333,stroke-width:4px
 ```

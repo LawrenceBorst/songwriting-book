@@ -17,17 +17,17 @@
 ### Used by
 
  - [sb-sidebar](.)
- - [sb-sidebar-content](.)
 
 ### Depends on
 
-- [sb-sidebar-content](.)
+- [sb-sidebar-contents](sidebar-modes)
 - [sb-sidebar-search](sidebar-modes)
 
 ### Graph
 ```mermaid
 graph TD;
-  sb-sidebar-content --> sb-sidebar-content
+  sb-sidebar-content --> sb-sidebar-contents
+  sb-sidebar-content --> sb-sidebar-search
   sb-sidebar --> sb-sidebar-content
   style sb-sidebar-content fill:#f9f,stroke:#333,stroke-width:4px
 ```
