@@ -14,6 +14,10 @@ export class SBSideBarContent {
   public mode: NavBarMode;
 
   public render() {
-    return <p>{this.mode}</p>;
+    if (this.mode === 'contents') {
+      return <sb-sidebar-contents />
+    } else if (this.mode === 'search') {
+      return <sb-sidebar-search />
+    }
   }
 }

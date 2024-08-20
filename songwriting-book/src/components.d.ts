@@ -43,9 +43,9 @@ export namespace Components {
          */
         "mode": NavBarMode;
     }
-    interface SidebarContents {
+    interface SbSidebarContents {
     }
-    interface SidebarSearch {
+    interface SbSidebarSearch {
     }
 }
 export interface SbIconBarCustomEvent<T> extends CustomEvent<T> {
@@ -109,17 +109,17 @@ declare global {
         prototype: HTMLSbSidebarContentElement;
         new (): HTMLSbSidebarContentElement;
     };
-    interface HTMLSidebarContentsElement extends Components.SidebarContents, HTMLStencilElement {
+    interface HTMLSbSidebarContentsElement extends Components.SbSidebarContents, HTMLStencilElement {
     }
-    var HTMLSidebarContentsElement: {
-        prototype: HTMLSidebarContentsElement;
-        new (): HTMLSidebarContentsElement;
+    var HTMLSbSidebarContentsElement: {
+        prototype: HTMLSbSidebarContentsElement;
+        new (): HTMLSbSidebarContentsElement;
     };
-    interface HTMLSidebarSearchElement extends Components.SidebarSearch, HTMLStencilElement {
+    interface HTMLSbSidebarSearchElement extends Components.SbSidebarSearch, HTMLStencilElement {
     }
-    var HTMLSidebarSearchElement: {
-        prototype: HTMLSidebarSearchElement;
-        new (): HTMLSidebarSearchElement;
+    var HTMLSbSidebarSearchElement: {
+        prototype: HTMLSbSidebarSearchElement;
+        new (): HTMLSbSidebarSearchElement;
     };
     interface HTMLElementTagNameMap {
         "sb-application": HTMLSbApplicationElement;
@@ -128,8 +128,8 @@ declare global {
         "sb-icon-bar": HTMLSbIconBarElement;
         "sb-sidebar": HTMLSbSidebarElement;
         "sb-sidebar-content": HTMLSbSidebarContentElement;
-        "sidebar-contents": HTMLSidebarContentsElement;
-        "sidebar-search": HTMLSidebarSearchElement;
+        "sb-sidebar-contents": HTMLSbSidebarContentsElement;
+        "sb-sidebar-search": HTMLSbSidebarSearchElement;
     }
 }
 declare namespace LocalJSX {
@@ -170,9 +170,9 @@ declare namespace LocalJSX {
          */
         "mode"?: NavBarMode;
     }
-    interface SidebarContents {
+    interface SbSidebarContents {
     }
-    interface SidebarSearch {
+    interface SbSidebarSearch {
     }
     interface IntrinsicElements {
         "sb-application": SbApplication;
@@ -181,8 +181,8 @@ declare namespace LocalJSX {
         "sb-icon-bar": SbIconBar;
         "sb-sidebar": SbSidebar;
         "sb-sidebar-content": SbSidebarContent;
-        "sidebar-contents": SidebarContents;
-        "sidebar-search": SidebarSearch;
+        "sb-sidebar-contents": SbSidebarContents;
+        "sb-sidebar-search": SbSidebarSearch;
     }
 }
 export { LocalJSX as JSX };
@@ -204,8 +204,8 @@ declare module "@stencil/core" {
             "sb-icon-bar": LocalJSX.SbIconBar & JSXBase.HTMLAttributes<HTMLSbIconBarElement>;
             "sb-sidebar": LocalJSX.SbSidebar & JSXBase.HTMLAttributes<HTMLSbSidebarElement>;
             "sb-sidebar-content": LocalJSX.SbSidebarContent & JSXBase.HTMLAttributes<HTMLSbSidebarContentElement>;
-            "sidebar-contents": LocalJSX.SidebarContents & JSXBase.HTMLAttributes<HTMLSidebarContentsElement>;
-            "sidebar-search": LocalJSX.SidebarSearch & JSXBase.HTMLAttributes<HTMLSidebarSearchElement>;
+            "sb-sidebar-contents": LocalJSX.SbSidebarContents & JSXBase.HTMLAttributes<HTMLSbSidebarContentsElement>;
+            "sb-sidebar-search": LocalJSX.SbSidebarSearch & JSXBase.HTMLAttributes<HTMLSbSidebarSearchElement>;
         }
     }
 }

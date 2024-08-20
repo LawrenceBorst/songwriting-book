@@ -1,12 +1,12 @@
 import { Component, h } from '@stencil/core';
 
 @Component({
-  tag: 'sidebar-contents',
+  tag: 'sb-sidebar-contents',
   styleUrl: 'contents.scss',
   shadow: true,
 })
-export class SideBarContents {
-  render() {
-    return <p>test</p>;
+export class SBSideBarContents {
+  public render() {
+    return <p>content</p>;
   }
 }
