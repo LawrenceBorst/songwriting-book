@@ -2,7 +2,7 @@ import { Component, h, Prop, State } from '@stencil/core';
 import { sidebarButtons } from './sidebar-buttons';
 import { NavBarMode, NavButton } from './types';
 import { Platform } from '../../platform/types';
-import { SBWebComponent } from '../sbwebcomponent'
+import { SBWebComponent } from '../sbwebcomponent';
 
 @Component({
   tag: 'sb-sidebar',
@@ -26,7 +26,7 @@ export class SBSideBar implements SBWebComponent {
       return iconBar;
     }
 
-    return [<sb-sidebar-content mode={this.mode} />, iconBar];
+    return [<sb-sidebar-content platform={this.platform} mode={this.mode} />, iconBar];
   }
 
   private handleSelection = (event: CustomEvent<NavButton | null>) => {

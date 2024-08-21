@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                                 | Type                     | Default     |
-| -------- | --------- | ------------------------------------------- | ------------------------ | ----------- |
-| `mode`   | `mode`    | The current navigation mode to be displayed | `"contents" \| "search"` | `undefined` |
+| Property   | Attribute | Description                                           | Type                     | Default     |
+| ---------- | --------- | ----------------------------------------------------- | ------------------------ | ----------- |
+| `mode`     | `mode`    | The current navigation mode to be displayed           | `"contents" \| "search"` | `undefined` |
+| `platform` | --        | The platform, functioning as a global key value store | `Platform`               | `undefined` |
 
 
 ## Dependencies

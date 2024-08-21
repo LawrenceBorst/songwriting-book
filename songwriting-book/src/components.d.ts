@@ -54,8 +54,18 @@ export namespace Components {
           * The current navigation mode to be displayed
          */
         "mode": NavBarMode;
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform": Platform;
     }
     interface SbSidebarContents {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform": Platform;
     }
     interface SbSidebarSearch {
     }
@@ -191,8 +201,18 @@ declare namespace LocalJSX {
           * The current navigation mode to be displayed
          */
         "mode"?: NavBarMode;
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform"?: Platform;
     }
     interface SbSidebarContents {
+        /**
+          * The platform, functioning as a global key value store
+          * @inheritdoc
+         */
+        "platform"?: Platform;
     }
     interface SbSidebarSearch {
     }
