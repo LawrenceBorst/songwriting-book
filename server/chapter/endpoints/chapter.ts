@@ -1,18 +1,15 @@
 import fs from "fs";
-import path from "path";
-import { Chapter, ChapterFileHeader } from "./types";
-import { CHAPTER_FILE_HEADERS } from "./constants";
+import { Chapter, ChapterFileHeader } from "../types";
+import { CHAPTER_FILE_HEADERS } from "../constants";
+import { getChapterFile } from "./utils";
 
-export const chapterEndpoint = (req: any, res: any) => {
+export const chapterEndpoint = (req: any, res: any): void => {
   const chapter: number = parseInt(req.params.index, 10);
   if (!isValidChapter(chapter)) {
     return res.status(400).send("Invalid chapter index");
   }
 
-  const chapterFile: string = path.join(
-    __dirname,
-    `../chapters/chapter-${getChapterNumber(chapter)}.sb`
-  );
+  const chapterFile: string = getChapterFile(chapter);
 
   fs.readFile(
     chapterFile,
@@ -28,10 +25,6 @@ export const chapterEndpoint = (req: any, res: any) => {
       res.send(getChapter(content.split("\n"), chapter));
     }
   );
-};
-
-const getChapterNumber = (chapter: number): string => {
-  return chapter.toString().padStart(2, "0");
 };
 
 const isValidChapter = (chapter: any): boolean => {
@@ -67,11 +60,11 @@ const getChapter = (content: string[], number: number): Chapter => {
   }
 
   if (name === undefined) {
-    throw Error("No name found in chapter file");
+    throw Error(`No name found in chapter file ${number}`);
   }
 
   if (body === undefined) {
-    throw Error("No content found in chapter file");
+    throw Error(`No content found in chapter file ${number}`);
   }
 
   return {

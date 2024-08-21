@@ -18,7 +18,7 @@
   },
   "include": [
     "src"
-, "../server/chapter"  ],
+, "../server/endpoints/chapter"  ],
   "exclude": [
     "node_modules"
   ]

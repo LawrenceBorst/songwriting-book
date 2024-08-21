@@ -3,5 +3,11 @@ chapter 3
 <--CONTENT-->
 This is the content of chapter 3
 
-# Here is a header
+### Here is a header
 Here is a non-header
+
+###### Here is a super deep header
+
+## And less deep header
+
+## And another one

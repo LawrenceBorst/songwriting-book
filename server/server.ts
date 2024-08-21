@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
-import { chapterEndpoint } from "./chapter/endpoint";
+import { chapterEndpoint } from "./chapter/endpoints/chapter";
+import { chapterInfoEndpoint } from "./chapter/endpoints/chapter-info";
 
 const app: express.Express = express();
 const PORT: string | 3000 = process.env.PORT || 3000;
@@ -19,6 +20,8 @@ app.get("/", (_, res) => {
 });
 
 app.get("/api/chapters/:index", chapterEndpoint);
+
+app.get("/api/chapterinfo", chapterInfoEndpoint)
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
