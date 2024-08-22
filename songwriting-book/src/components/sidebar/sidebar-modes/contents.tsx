@@ -38,9 +38,9 @@ export class SBSideBarContents implements SBWebComponent {
     );
   }
 
-  private renderSections = (sections: Section[] | undefined): HTMLElement => {
+  private renderSections = (sections: Section[] | undefined): HTMLElement | undefined => {
     if (sections === undefined || sections.length === 0) {
-      return;
+      return undefined;
     }
 
     return (

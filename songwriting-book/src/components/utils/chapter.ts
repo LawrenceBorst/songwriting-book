@@ -4,16 +4,14 @@ export async function getChapter(chapter: number): Promise<Response> {
 
     if (!response.ok) {
       if (response.status === 404) {
-        console.error(`Chapter ${chapter} not found`);
+        throw Error(`Chapter ${chapter} not found`);
       } else {
-        console.error(`Failed to fetch chapter ${chapter}`);
+        throw Error(`Failed to fetch chapter ${chapter}`);
       }
-
-      return;
     }
 
     return response;
   } catch (error) {
-    console.error('Error fetching chapter:', error);
+    throw new Error(`Error fetching chapter: ${error}`);
   }
 }

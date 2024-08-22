@@ -20,16 +20,14 @@ async function getChapters(): Promise<Response> {
 
     if (!response.ok) {
       if (response.status === 404) {
-        console.error(`Chapterinfo not found`);
+        throw Error(`Chapterinfo not found`);
       } else {
-        console.error(`Failed to fetch chapterinfo`);
+        throw Error(`Failed to fetch chapterinfo`);
       }
-
-      return;
     }
 
     return response;
   } catch (error) {
-    console.error('Error fetching chapter:', error);
+    throw Error(`Error fetching chapter: ${error}`);
   }
 }
