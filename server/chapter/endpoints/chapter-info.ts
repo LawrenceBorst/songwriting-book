@@ -7,7 +7,7 @@ import {
 import { ChapterFileHeader } from "../types";
 import { CHAPTER_FILE_HEADERS } from "../constants";
 
-export async function chapterInfoEndpoint(_: any, res: any): Promise<void> {
+export async function chapterInfoEndpoint(_req: any, res: any): Promise<void> {
   const chaptersPath: string = path.join(__dirname, "../../chapters");
 
   const files: string[] = fs.readdirSync(chaptersPath);
